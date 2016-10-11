@@ -35,7 +35,7 @@
           <section>
             <h2>Main Indicators</h2>
               <ul>
-                <li>Gross Domestic Product</li>
+                <li>GDP Growth (Annual %)</li>
                 <li>Gross National Income</li>
                 <li>Purchasing Power Parity</li>
                 <li>Human Development Index</li>
@@ -43,7 +43,14 @@
           </section>
 
           <section>
-            Gross Domestic Product
+            <h3>GDP Growth (Annual %)</h3>
+            <h4>Refresher: GDP = C + G + I + (X - M)</h4>
+            <ul>
+              <li>Annual percentage growth rate of GDP at market prices based on constant local currency.</li>
+              <li>Aggreates based on constant 2010 U.S. Dollars</li>
+              <li>Limitations?</li>
+              <li></li>
+            </ul>
           </section>
 
           <section>
@@ -77,10 +84,11 @@
 
         <section data-background = "#000000" data-background-transition = "zoom">
           <section>
-            <p>
-              Historical data
-            </p>
-            <img class = "plain" src="GDP Growth.png">
+            <h4>Historical GDP per Capita<h4>
+						<p>
+							<small><i>Taken from the Maddison Dataset</i></small>
+						</p>
+            <img class = "plain" src="Historical GDP.png">
           </section>
 
           <section>
@@ -92,8 +100,47 @@
         <section>
 
           <section>
-            Basic Statistics here
+            <h3>Basic Statistics</h3>
+						<p>GDP Growth Statistics - 2000 & 2014 Comparison</p>
+						<table>
+							<thead>
+								<tr>
+									<th>Year</th>
+									<th>Min</th>
+									<th>Max</th>
+									<th>Mean</th>
+									<th>Median</th>
+									<th>SD</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2000</td>
+									<td>-14.267 (Solomon Islands)</td>
+									<td>28.616 (Liberia)</td>
+									<td>4.238</td>
+									<td>4.214</td>
+									<td>4.271</td>
+								</tr>
+								<tr>
+									<td>2014</td>
+									<td>-24.000 (Libya)</td>
+									<td>10.300 (Turkmenistan)</td>
+									<td>3.204</td>
+									<td>3.204</td>
+									<td>3.397</td>
+								</tr>
+							</tbody>
+						</table>
           </section>
+
+					<section>
+						<h4>Basic Correlations Between Growth and Other Variables</h4>
+						<p>
+							<small><i>Include only variables with < 20% missing data. Correlations are imperfect because all rows of matrix with missing observations are simply removed</i></small>
+						</p>
+						<img class = "plain" src = "Growth Correlation.png" >
+					</section>
 
         </section>
 

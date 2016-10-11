@@ -38,13 +38,13 @@
                 <li>GDP Growth (Annual %)</li>
                 <li>Gross National Income</li>
                 <li>Purchasing Power Parity</li>
-                <li>Human Development Index</li>
               </ul>
           </section>
 
           <section>
             <h3>GDP Growth (Annual %)</h3>
-            <h4>Refresher: GDP = C + G + I + (X - M)</h4>
+            <p>Refresher: <span class = "fragment highlight-blue">GDP = C + G + I + (X - M)</span></p>
+						<p>GDP Growth Equation: <span class = "fragment highlight-red">$\frac{GDP_Q - GDP_{Q-4}}{GDP_{Q-4}}$</span></p>
             <ul>
               <li>Annual percentage growth rate of GDP at market prices based on constant local currency.</li>
               <li>Aggreates based on constant 2010 U.S. Dollars</li>
@@ -82,9 +82,7 @@
         <section data-background = "#000000" data-background-transition = "zoom">
           <section>
             <h4>Historical GDP per Capita<h4>
-						<p>
-							<small><i>Taken from the Maddison Dataset</i></small>
-						</p>
+						<p><small><i>Data from the Maddison Project</i></small></p>
             <img class = "plain" src="Historical GDP.png">
           </section>
 
@@ -213,10 +211,11 @@
 
         </section>
 
-        <section>
+        <section data-background = #000000>
 
           <section>
-            <h3>Russia - Growth vs Democracy</h3>
+            <h4>Russia - Growth vs Democracy</h4>
+						<p><small><i>Data from the Worldbank and the Economist</i></small></p>
 						<img class = "plain" src = "Russia.png">
           </section>
 
@@ -236,7 +235,8 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
 		</script>

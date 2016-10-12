@@ -62,16 +62,17 @@
 
           <section>
             <h3>GDP Growth (Annual %)</h3>
+						<br />
 						<p>GDP Growth Equation: <span class = "fragment highlight-red">$\frac{GDP_Q - GDP_{Q-4}}{GDP_{Q-4}} \times 100\%$</span></p>
             <ul>
-              <li>Annual percentage growth rate of GDP at market prices based on constant local currency.</li>
-              <li>Aggreates based on constant 2010 U.S. Dollars</li>
+              <li>Annual percentage growth rate of GDP <!--at market prices based on constant local currency.--></li>
+              <!--<li>Aggregates based on constant 2010 U.S. Dollars</li>-->
             </ul>
           </section>
 
 					<section>
 						<h3>Basic Statistics</h3>
-						<p>GDP Growth Statistics - 2000 & 2015 Comparison</p>
+						<p>GDP Growth Statistics - 2000 & 2015</p>
 						<table>
 							<thead>
 								<tr>
@@ -106,29 +107,31 @@
 
 					<section data-background = #000000>
 						<h4>GDP Growth By Region From 2000 to 2015</h4>
-						<p><small><i>High income countries excluded from East Asia and Sub-Saharan Africa</i></small></p>
+						<p><small><i>High income countries excluded from East Asia and Sub-Saharan Africa <br/> Aggregates based on constant 2010 US Dollar</i></small></p>
 						<img class = "plain" src = "GDP Growth.png">
 					</section>
 
           <section>
           	<h3>GNI Growth (Atlas, Annual %)</h3>
+						<br />
 						<p>GNI Growth Equation: <span class = "fragment highlight-red">$\frac{GNI_Q - GNI_{Q-4}}{GNI_{Q-4}} \times 100\%$</span></p>
-						<h4>Atlas Method</h4>
+						<!-- <h4>Atlas Method</h4>
 						<p>
 						 Uses a 3-year average of exchange rates to smooth effects of transitory exchange rate fluctuations, adjusted for the difference between the rate of inflation in the country and that in a number of developed countries</li>
-					 </p>
+					 </p>-->
 
           </section>
 
           <section data-background = #000000>
 						<h4>GNI Growth By Region From 2000 to 2015</h4>
-						<p><small><i>High income countries excluded from East Asia and Sub-Saharan Africa</i></small></p>
+						<p><small><i>High income countries excluded from East Asia and Sub-Saharan Africa <br />
+						Aggregates based on constant 2010 US Dollar</i></small></p>
 						<img class = "plain" src = "GNI Growth.png">
           </section>
 
 					<section data-background = #000000>
 						<h4>Comparison</h4>
-						<p><small><i>Scall adjusted</i></small></p>
+						<p><small><i>Scales adjusted</i></small></p>
 						<img class = "plain" src = "Left.png">
 						<img class = "plain" src = "Right.png">
 					</section>
@@ -216,7 +219,7 @@
 [1] "iso2c"             "country"           "year"              "GDP Growth"        "GDP-PC"
 [6] "Inflation"         "Infant Mortality"  "School Enrollment"
 > cor(cortest[, 4:8], use="complete")
-								 GDP Growth     GDP-PC   Inflation Infant Mortality School Enrollment
+                  GDP Growth     GDP-PC   Inflation Infant Mortality School Enrollment
 GDP Growth         1.00000000 -0.3539726  0.09820048        0.4736165        -0.1341191
 GDP-PC            -0.35397258  1.0000000 -0.30223000       -0.5479866         0.1980190
 Inflation          0.09820048 -0.3022300  1.00000000        0.2720608        -0.0475518
@@ -241,8 +244,13 @@ School Enrollment -0.13411906  0.1980190 -0.04755180       -0.4759349         1.
 						<h3>Indexes That "Correct GDP"</h3>
 						<ul>
 							<li>The Index of Sustainable Economic Welfare</li>
+							<span class = "fragment">$$ISEW = C + (GE-DE) - (VoDW) - VoED$$</span>
+							<br />
 							<li>Green GDP</li>
+							<span class = "fragment">$$Green\ GDP = GDP - CNR -ED- EPE$$</span>
+							<br />
 							<li>Genuine Savings</li>
+							<span class = "fragment">$$GS= \frac{GNS- D_h + CSE - \sum{R_{n.i}}  - CD}{ GNI}$$</span>
 						</ul>
 					</section>
 
@@ -258,9 +266,11 @@ School Enrollment -0.13411906  0.1980190 -0.04755180       -0.4759349         1.
 					<section>
 						<h3>Composite Indexes <br/>Including GDP</h3>
 						<ul>
-							<li>Human Development Index</li>
 							<li>Living Planet Report</li>
 							<li>Happy Planet Index</li>
+							<li>Human Development Index</li>
+							<span class = "fragment">$$HDI= \frac{LEI + EAI + ar GDP\ per\ Capita\ Index}{3}$$
+							</span>
 						</ul>
 					</section>
 
@@ -275,13 +285,35 @@ School Enrollment -0.13411906  0.1980190 -0.04755180       -0.4759349         1.
 					<section>
 						<h4>The Harrod-Domar Growth Model</h4>
 						<blockquote>
-							&ldquo;To grow, economies must save and invest a certain portion of their GDP. But the rate
-							at which they can grow for any level of saving and investment - how much additional output
-							can be had from an additional unit of investment - can be measured by the inverse of the
-							capital-output ratio.&rdquo;
+							&ldquo;One of the most fundamental strategies of economic growth is simply
+							to increase the proportion of national income saved (i.e., not consumed).&rdquo;
 						</blockquote>
 						<p>The rate of growth of GDP is determined joinly by the net national savings ratio
 						and the national-capital output ratio</p>
+					</section>
+
+					<section>
+						Ready for some math?
+					</section>
+					<section>
+						<span class = "fragment"><p>Net saving ($S$) = portion of national income ($Y$) </p>
+						<p>$S = sY$ (so $s$ = saving ratio)</p></span>
+						<span class = "fragment"><p>Net investment($I$) = change in capital stock($K$)</p>
+						$$I = \Delta K$$</span>
+						<span class = "fragment"><p>$K$ relates to $Y$ by capital-output ratio ($c$)</p>
+						$$\frac{K}{Y} = c \  ... or ...\   \frac{\Delta K}{\Delta Y} = c$$</span>
+						<br />
+						<span class = "fragment">$$\Rightarrow \Delta K = c\Delta Y$$</span>
+						<span class = "fragment"><p>Assuming saving = investment</p>
+						$$S = I$$</span>
+					</section>
+					<section>
+						<p>So far..</p>
+						$$I = \Delta K = c\Delta Y$$
+						<br />
+						<span class = "fragment"><p>But $S = I$ and $S = sY$</p> $$\Rightarrow sY = c\Delta Y$$</span>
+						<span class = "fragment"><p>Dividing by $Y$ and then by $c$</p>
+						$$\frac{\Delta Y}{Y} = \frac{s}{c}$$</span>
 					</section>
 
 					<section>

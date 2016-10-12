@@ -26,6 +26,7 @@
 			<div class="slides">
 				<section>
           <h2> The <br> Economic Growth Lab</h2>
+					<br/>
           <p>
             A presentation by Shaua Fui, Elisa, Archimedes, and Mark
           </p>
@@ -112,9 +113,10 @@
           <section>
           	<h3>GNI Growth (Atlas, Annual %)</h3>
 						<p>GNI Growth Equation: <span class = "fragment highlight-red">$\frac{GNI_Q - GNI_{Q-4}}{GNI_{Q-4}} \times 100\%$</span></p>
-						<ul>
-							<li>Uses a 3-year average of exchange rates to smooth effects of transitory exchange rate fluctuations, adjusted for the difference between the rate of inflation in the country and that in a number of developed countries</li>
-						</ul>
+						<h4>Atlas Method</h4>
+						<p>
+						 Uses a 3-year average of exchange rates to smooth effects of transitory exchange rate fluctuations, adjusted for the difference between the rate of inflation in the country and that in a number of developed countries</li>
+					 </p>
 
           </section>
 
@@ -196,21 +198,40 @@
 						</table>
           </section>
 
-          <section data-background = "http://i.imgur.com/fDgwhfU.gif">
+          <section data-background = "http://i.imgur.com/cFoHq1o.gif">
             <h2>Which indicator to choose?</h2>
           </section>
 
         </section>
 
-        <section data-background="#4d7e65" data-background-transition = "zoom">
-
+				<section>
 					<section>
 						<h4>Basic Correlations Between Growth and Other Variables</h4>
 						<p>
 							<small><i>Include only variables with < 20% missing data. Correlations are imperfect because all rows of matrix with missing observations are simply removed</i></small>
 						</p>
-						<img class = "plain" src = "Growth Correlation.png" >
+						<pre>
+							<code>
+> names(cortest)
+[1] "iso2c"             "country"           "year"              "GDP Growth"        "GDP-PC"
+[6] "Inflation"         "Infant Mortality"  "School Enrollment"
+> cor(cortest[, 4:8], use="complete")
+								 GDP Growth     GDP-PC   Inflation Infant Mortality School Enrollment
+GDP Growth         1.00000000 -0.3539726  0.09820048        0.4736165        -0.1341191
+GDP-PC            -0.35397258  1.0000000 -0.30223000       -0.5479866         0.1980190
+Inflation          0.09820048 -0.3022300  1.00000000        0.2720608        -0.0475518
+Infant Mortality   0.47361650 -0.5479866  0.27206082        1.0000000        -0.4759349
+School Enrollment -0.13411906  0.1980190 -0.04755180       -0.4759349         1.0000000
+							</code>
+						</pre>
 					</section>
+
+					<section data-background = "#ffffff">
+						<img class = "plain", src = "Growth Correlation.png" />
+					</section>
+				</section>
+
+        <section data-background="#4d7e65" data-background-transition = "zoom">
 
           <section>
             Alternative Indicators
@@ -269,6 +290,26 @@
 							&ldquo;Countries differ in their economic success because of their different institutions, the
 							rules influencing how the economy works, and the incentives that motivate people.&rdquo;
 						</blockquote>
+						<h4>State Fragility Index</h4>
+						<ul>
+							<li>Annual state fragility, effectiveness, and legitimacy indices for 167 countries with populations greater than 500,000</li>
+							<li>8 component indicators</li>
+						</ul>
+					</section>
+					<section data-background = "#000000">
+						<h4>Correlation Between Institution Indices and GDP Growth, 1995 - 2014</h4>
+						<p><small><i>Data From the Worldbank and <a href="http://www.systemicpeace.org/inscrdata.html">Center for Systemic Peace</a></i></small></p>
+						<pre><code>
+> growthFragile <- `SFIv2014(1)_final_change.filter`
+> growthFragile <- growthFragile[, c(2,4,6,7,8)]
+> cor(growthFragile[sapply(growthFragile, is.numeric)], use = "complete")
+             GDP       sfi    effect     legit
+GDP    1.0000000 0.1390962 0.1266773 0.1364937
+sfi    0.1390962 1.0000000 0.9513013 0.9343862
+effect 0.1266773 0.9513013 1.0000000 0.7790605
+legit  0.1364937 0.9343862 0.7790605 1.0000000
+
+						</code></pre>
 					</section>
 
 					<section>
@@ -276,20 +317,25 @@
 						<blockquote>
 							&ldquo;Development entails a set of linked freedom.&rdquo;
 						</blockquote>
-						<p>Democracy Index</p>
+						<h4>Democracy Index</h4>
+						<ul>
+							<li>Compiled by the Economist Intelligence Unit</li>
+							<li>Based on 60 indicators in five different categories measuring pluralism, civil liberties, and political culture.</li>
+						</ul>
+					</section>
+
+					<section data-background = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/2015_Democracy_Index.svg/2000px-2015_Democracy_Index.svg.png">
+
+					</section>
+
+					<section data-background = #000000>
+						<h4>Russia - Growth vs Democracy</h4>
+						<p><small><i>Data from the Worldbank and <a href="http://www.yabiladi.com/img/content/EIU-Democracy-Index-2015.pdf">the Economist</a></i></small></p>
+						<img class = "plain" src = "Russia.png">
 					</section>
 
         </section>
 
-        <section data-background = #000000>
-
-          <section>
-            <h4>Russia - Growth vs Democracy</h4>
-						<p><small><i>Data from the Worldbank and the Economist</i></small></p>
-						<img class = "plain" src = "Russia.png">
-          </section>
-
-        </section>
 			</div>
 		</div>
 
